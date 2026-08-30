@@ -1,24 +1,24 @@
 <div align="center">
-  <a href="https://github.com/repo-name-template/">
-    <img src="https://github.com/repo-name-template/blob/main/assets/template-logo.png?raw=true" alt="Logo" height="180" style="border-radius: 10px">
+  <a href="https://github.com/lukas-sgx/nimbus/">
+    <img src="https://github.com/lukas-sgx/nimbus/blob/main/assets/template-logo.png?raw=true" alt="Logo" height="180" style="border-radius: 10px">
   </a>
 
   <h3 align="center">Project Template</h3>
 
-  [![License](https://img.shields.io/github/license/@your-name/@your-repo?style=for-the-badge)](./LICENSE)
-  [![Build Status](https://img.shields.io/github/actions/workflow/status/@your-name/@your-repo/ci.yml?style=for-the-badge)](https://github.com/@your-name/@your-repo/actions)
+  [![License](https://img.shields.io/github/license/lukas-sgx/nimbus?style=for-the-badge)](./LICENSE)
+  [![Build Status](https://img.shields.io/github/actions/workflow/status/lukas-sgx/nimbus/ci.yml?style=for-the-badge)](https://github.com/lukas-sgx/nimbus/actions)
 
   <p align="center">
     A flexible starter repository for new software projects.
     <br />
-    <a href="https://github.com/repo-name-template"><strong>Explore the repository »</strong></a>
+    <a href="https://github.com/lukas-sgx/nimbus"><strong>Explore the repository »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/repo-name-template">View Demo</a>
+    <a href="https://github.com/lukas-sgx/nimbus">View Demo</a>
     &middot;
-    <a href="https://github.com/repo-name-template/issues/new?template=bug-report.yml">Report Bug</a>
+    <a href="https://github.com/lukas-sgx/nimbus/issues/new?template=bug-report.yml">Report Bug</a>
     &middot;
-    <a href="https://github.com/repo-name-template/issues/new?template=feature-request.yml">Request Feature</a>
+    <a href="https://github.com/lukas-sgx/nimbus/issues/new?template=feature-request.yml">Request Feature</a>
   </p>
 </div>
 
@@ -68,8 +68,8 @@ You need a runtime, package manager, or toolchain that fits the stack you want t
 #### Development mode (clone the repo, with local changes)
 1. Clone the repository
 ```sh
-git clone https://github.com/repo-name-template.git
-cd project-template
+git clone https://github.com/lukas-sgx/nimbus.git
+cd nimbus
 ```
 2. Customize the files and structure for your project
 ```sh
@@ -94,7 +94,7 @@ Use this template as a foundation for your own project. Replace the placeholder 
 - [ ] Add core application logic
 - [ ] Add tests and documentation
 
-See the [open issues](https://github.com/repo-name-template/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/lukas-sgx/nimbus/issues) for a full list of proposed features (and known issues).
 
 ## Contributing
 
@@ -104,8 +104,8 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for setup instructions, commit conventi
 
 ### Top contributors:
 
-<a href="https://github.com/repo-name-template/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=repo-name-template" alt="contrib.rocks image" />
+<a href="https://github.com/lukas-sgx/nimbus/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=lukas-sgx/nimbus" alt="contrib.rocks image" />
 </a>
 
 ## License
