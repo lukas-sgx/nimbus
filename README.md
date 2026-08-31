@@ -1,6 +1,6 @@
 <div align="center">
   <a href="https://github.com/lukas-sgx/nimbus/">
-    <img src="https://github.com/lukas-sgx/nimbus/blob/main/assets/template-logo.png?raw=true" alt="Logo" height="180" style="border-radius: 10px">
+    <img src="https://github.com/lukas-sgx/nimbus/blob/main/assets/nimbus-logo.png?raw=true" alt="Logo" height="180" style="border-radius: 10px">
   </a>
 
   <h3 align="center">Project Template</h3>
