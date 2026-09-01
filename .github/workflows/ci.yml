@@ -1,4 +1,4 @@
-name: template - CI
+name: nimbus - CI
 
 on:
   push:
