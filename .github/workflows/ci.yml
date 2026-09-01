@@ -1,4 +1,4 @@
-name: template - CI
+name: nimbus - CI
 
 on:
   push:
@@ -13,13 +13,27 @@ permissions:
 
 jobs:
   build:
+    strategy:
+      matrix:
+        app: ["frontend"]
+        output-dir: ["front-dist"]
+
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v7
+
+    - name: Setup Bun
+      uses: oven-sh/setup-bun@v2
+      with:
+        bun-version: latest
+
     - name: Build
       run: |
-        echo "build here"
+        cd ${{ matrix.app }}
+        bun ci
+        bun build ./src/index.ts --outdir ./${{ matrix.output-dir }} --target=bun
+        cd -
 
   open_pull_request:
       if: (github.ref_name == 'develop' || github.ref_name == 'main') && github.event_name == 'push'

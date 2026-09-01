@@ -2,9 +2,11 @@ name: Release Stable
 
 on:
   workflow_run:
-    workflows: ["template - CI"]
+    workflows: ["nimbus - CI"]
     types: [completed]
-    branches: [stable]
+    branches:
+      - stable
+      - staging
 
 jobs:
   release:
@@ -19,28 +21,43 @@ jobs:
       id-token: write
       issues: write
 
+    outputs:
+      release_created: ${{ steps.release.outputs.release_created }}
+      tag_name: ${{ steps.release.outputs.tag_name }}
+
     steps:
       - uses: googleapis/release-please-action@v5
         id: release
         with:
-          target-branch: stable
+          target-branch: ${{ github.event.workflow_run.head_branch }}
           config-file: release-config.json
           manifest-file: .release-manifest.json
 
+  build:
+    runs-on: ubuntu-latest
+    needs: release
+    if: ${{ needs.release.outputs.release_created == 'true' }}
+
+    strategy:
+      matrix:
+        app: ["frontend"]
+        output-dir: ["front-dist"]
+
+    steps:
       - uses: actions/checkout@v7
-        if: ${{ steps.release.outputs.release_created }}
         with:
           fetch-depth: 0
-          ref: stable
+          ref: ${{ github.event.workflow_run.head_branch }}
 
-      - name: Build & publish
-        if: ${{ steps.release.outputs.release_created }}
+      - name: Build
         run: |
-          echo "build here"
+          cd ${{ matrix.app }}
+          bun ci
+          bun build ./src/index.ts --outdir ./${{ matrix.output-dir }} --target=bun
+          cd -
 
       - name: Upload to GitHub Release
-        if: ${{ steps.release.outputs.release_created }}
         env:
-            GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ github.token }}
         run: |
-          gh release upload ${{ steps.release.outputs.tag_name }} bin/*
+          gh release upload ${{ needs.release.outputs.tag_name }} ${{ matrix.app }}/${{ matrix.output-dir }}/*
