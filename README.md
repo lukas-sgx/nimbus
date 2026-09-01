@@ -1,25 +1,25 @@
 <div align="center">
   <a href="https://github.com/lukas-sgx/nimbus/">
-    <img src="https://github.com/lukas-sgx/nimbus/blob/main/assets/nimbus-logo.png?raw=true" alt="Logo" height="180" style="border-radius: 10px">
-  </a>
+<img src="https://github.com/lukas-sgx/nimbus/blob/main/assets/nimbus-logo.png?raw=true" alt="Logo" height="180" style="border-radius: 10px">
+</a>
 
-  <h3 align="center">Project Template</h3>
+<h3 align="center">Nimbus</h3>
 
-  [![License](https://img.shields.io/github/license/lukas-sgx/nimbus?style=for-the-badge)](./LICENSE)
-  [![Build Status](https://img.shields.io/github/actions/workflow/status/lukas-sgx/nimbus/ci.yml?style=for-the-badge)](https://github.com/lukas-sgx/nimbus/actions)
+[![License](https://img.shields.io/github/license/lukas-sgx/nimbus?style=for-the-badge)](./LICENSE)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/lukas-sgx/nimbus/ci.yml?style=for-the-badge)](https://github.com/lukas-sgx/nimbus/actions)
 
-  <p align="center">
-    A flexible starter repository for new software projects.
-    <br />
-    <a href="https://github.com/lukas-sgx/nimbus"><strong>Explore the repository »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/lukas-sgx/nimbus">View Demo</a>
-    &middot;
-    <a href="https://github.com/lukas-sgx/nimbus/issues/new?template=bug-report.yml">Report Bug</a>
-    &middot;
-    <a href="https://github.com/lukas-sgx/nimbus/issues/new?template=feature-request.yml">Request Feature</a>
-  </p>
+<p align="center">
+  Fly in the cloud hosting.
+  <br />
+  <a href="https://github.com/lukas-sgx/nimbus"><strong>Explore the repository »</strong></a>
+  <br />
+  <br />
+  <a href="https://github.com/lukas-sgx/nimbus">View Demo</a>
+  &middot;
+  <a href="https://github.com/lukas-sgx/nimbus/issues/new?template=bug-report.yml">Report Bug</a>
+  &middot;
+  <a href="https://github.com/lukas-sgx/nimbus/issues/new?template=feature-request.yml">Request Feature</a>
+</p>
 </div>
 
 <details>
@@ -49,7 +49,7 @@
 
 ## About The Project
 
-This repository is a generic starter template for building new software projects. It is designed to be easy to adapt for web, backend, CLI, desktop, scripting, or data-focused applications.
+Nimbus is a lightweight cloud hosting solution designed to deploy applications quickly, without the overhead of traditional cloud platforms. The goal is to offer a simple, resource-efficient infrastructure that's easy to manage — whether for small personal projects or modest-scale production services.
 
 ### Built With
 
@@ -61,7 +61,7 @@ To get a local copy up and running, follow these simple steps.
 
 ### Prerequisites
 
-You need a runtime, package manager, or toolchain that fits the stack you want to build.
+You need a compatible environment (Docker or an equivalent runtime) along with network access to deploy your services.
 
 ### Installation
 
@@ -71,27 +71,27 @@ You need a runtime, package manager, or toolchain that fits the stack you want t
 git clone https://github.com/lukas-sgx/nimbus.git
 cd nimbus
 ```
-2. Customize the files and structure for your project
+2. Configure Nimbus for your environment
 ```sh
-# Add your source code, tests, and configuration here
+# Add your environment variables and configuration files here
 ```
 
-#### Release mode (use it as a starting point)
+#### Release mode (use it directly)
 ```sh
-# Copy this repository and adapt it to your needs
+# Fetch the latest release and deploy it to your server
 ```
 
 ## Usage
 
-Use this template as a foundation for your own project. Replace the placeholder content, choose your stack, and start building.
+Nimbus lets you host your applications quickly and without unnecessary complexity. Configure your services, deploy them, and manage your infrastructure with minimal overhead.
 
-*For more advanced examples, please refer to the repository structure and adapt the code as needed.*
+*For more advanced examples, please refer to the repository structure and adapt the configuration as needed.*
 
 ## Roadmap
 
-- [ ] Choose the target language or framework
+- [ ] Define the target hosting architecture
 - [ ] Set up the project structure
-- [ ] Add core application logic
+- [ ] Add core hosting logic (deployment, service management)
 - [ ] Add tests and documentation
 
 See the [open issues](https://github.com/lukas-sgx/nimbus/issues) for a full list of proposed features (and known issues).
@@ -118,8 +118,7 @@ Your Name - your.email@example.com
 
 ## Acknowledgments
 
-* [Markdown](https://www.markdownguide.org/) - The format used for documentation in this template
+* [Markdown](https://www.markdownguide.org/) - The format used for documentation in this project
 
 [Markdown-shield]: https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown&logoColor=white
 [Markdown-url]: https://www.markdownguide.org/
-
