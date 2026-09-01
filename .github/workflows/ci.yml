@@ -13,13 +13,18 @@ permissions:
 
 jobs:
   build:
+    strategy:
+      matrix:
+        app: ["fronted"]
+
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v7
     - name: Build
       run: |
-        echo "build here"
+        cd ${{ matrix.app }}
+        bun build
 
   open_pull_request:
       if: (github.ref_name == 'develop' || github.ref_name == 'main') && github.event_name == 'push'
