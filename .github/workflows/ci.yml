@@ -31,7 +31,7 @@ jobs:
       run: |
         cd ${{ matrix.app }}
         bun ci
-        bun build ./src/index.ts --outdir ./dist
+        bun build ./src/index.ts --outdir ./dist --target=bun
 
   open_pull_request:
       if: (github.ref_name == 'develop' || github.ref_name == 'main') && github.event_name == 'push'
