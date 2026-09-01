@@ -114,7 +114,7 @@ Distributed under the MIT License. See [LICENSE](./LICENSE) for more information
 
 ## Contact
 
-Your Name - your.email@example.com
+`@lukas-sgx` - lukas.soigneux@epitech.eu
 
 ## Acknowledgments
 
