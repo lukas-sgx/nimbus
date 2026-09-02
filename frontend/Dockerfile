@@ -13,5 +13,5 @@ COPY src ./src
 
 ENV NODE_ENV=production
 USER bun
-EXPOSE 3000
-ENTRYPOINT [ "bun", "run", "src/index.ts" ]
+EXPOSE 5460
+ENTRYPOINT [ "bun", "start" ]
