@@ -1,0 +1,61 @@
+services:
+  nimbus:
+    container_name: frontend
+    build:
+      context: ../frontend
+      dockerfile: Dockerfile
+    restart: always
+    expose:
+      - "3000"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.frontend.rule=Host(`nimbus.soigneux.works`)"
+      - "traefik.http.routers.frontend.entrypoints=web"
+      - "traefik.http.services.frontend.loadbalancer.server.port=3000"
+      - "traefik.instance=nimbus"
+    networks:
+      - proxy_network
+
+
+  traefik-nimbus:
+    image: traefik:latest
+    container_name: traefik-nimbus
+    restart: always
+    command:
+      - "--api.insecure=false"
+      - "--api.dashboard=false"
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--providers.file.directory=/etc/traefik/dynamic"
+      - "--providers.file.watch=true"
+      - "--entrypoints.web.address=:8888"
+      - "--providers.docker.constraints=Label(`traefik.instance`, `nimbus`)"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./traefik-dynamic:/etc/traefik/dynamic:ro
+    networks:
+      - tunnel_network
+      - proxy_network
+
+
+
+  cloudflare:
+    image: cloudflare/cloudflared:latest
+    container_name: cloudflare
+    restart: always
+    command: tunnel --no-autoupdate run --token ${TOKEN}
+    env_file:
+      - .env
+    environment:
+      - TOKEN=${TOKEN}
+    dns:
+      - 1.1.1.1
+      - 8.8.8.8
+    networks:
+      - tunnel_network
+
+networks:
+  tunnel_network:
+    driver: bridge
+  proxy_network:
+    driver: bridge
