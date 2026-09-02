@@ -6,12 +6,12 @@ services:
       dockerfile: Dockerfile
     restart: always
     expose:
-      - "3000"
+      - "5460"
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.frontend.rule=Host(`nimbus.soigneux.works`)"
       - "traefik.http.routers.frontend.entrypoints=web"
-      - "traefik.http.services.frontend.loadbalancer.server.port=3000"
+      - "traefik.http.services.frontend.loadbalancer.server.port=5460"
       - "traefik.instance=nimbus"
     networks:
       - proxy_network
